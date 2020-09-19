@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.ellize.incident.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginFragment"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tv_auth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@drawable/ic_logo" />
+
+        <TextView
+            android:id="@+id/tv_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/auth_promt"
+            android:textSize="36sp"
+            android:textColor="#222F38"
+            android:shadowColor="#000"
+            android:shadowRadius="7"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            app:layout_constraintBottom_toTopOf="@+id/ed_login"
+            app:layout_constraintEnd_toEndOf="@+id/ed_login"
+            app:layout_constraintStart_toStartOf="@+id/ed_login" />
+
+        <EditText
+            android:id="@+id/ed_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.user.login}"
+            android:hint="@string/email_promt"
+            app:layout_constraintBottom_toTopOf="@+id/ed_psw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="4dp"
+            android:background="@drawable/edittext_back"/>
+
+        <EditText
+            android:id="@+id/ed_psw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="@={viewmodel.user.psw}"
+            android:hint="@string/psw_promt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/edittext_back"
+
+            android:padding="4dp"/>
+
+        <Button
+            android:id="@+id/button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_back"
+            android:onClick="@{v->viewmodel.login(true)}"
+            android:text="@string/enter"
+            app:layout_constraintEnd_toEndOf="@+id/ed_psw"
+            app:layout_constraintStart_toStartOf="@+id/ed_psw"
+            app:layout_constraintTop_toBottomOf="@+id/tv_error_auth" />
+
+        <TextView
+            android:id="@+id/tv_forgetpsw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/forget_psw"
+            android:textColor="#222F38"
+            android:textColorLink="#222F38"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <TextView
+            android:id="@+id/tv_error_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrong_login_psw"
+            android:textColor="#f44"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/ed_psw"
+            app:layout_constraintTop_toBottomOf="@+id/ed_psw" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
