@@ -2,6 +2,9 @@
 System for targeting &amp; analize frames from drones and detect incidients.
 
 
+## Libraries need for server & preparation on target machine 
+1. Install POCO Libraies : On Linux(Debian): sudo apt-get install poco-dev 
+
 ## Server part description 
 **Table 1. Protocol Transport description**
 
