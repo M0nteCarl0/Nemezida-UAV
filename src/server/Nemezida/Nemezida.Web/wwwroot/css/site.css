@@ -1,0 +1,48 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+html, body {
+    background-color: #F5F5F5;
+}
+
+.nav-link {
+    text-align: left;
+    padding: 1.3rem 1rem;
+}
+
+.text-light {
+    color: white;
+}
+
+.bg-dark {
+    background-color: black !important;
+}
+
+.settings-button {
+    position: absolute;
+    left: 2.5em;
+    bottom: 2.5em;
+}
+
+.carousel-inner {
+    border-radius: 1.2em;
+}
+
+.arrow {
+    color: #6c6c6c;
+}
+
+.btn-dark {
+    background-color: black;
+    border-radius: .6em;
+    padding: 1em;
+}
+
+body {
+    font: 10pt Arial, Helvetica, sans-serif; /* Шрифт на веб-странице */
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 14pt;
+  }
+}

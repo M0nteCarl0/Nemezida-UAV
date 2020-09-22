@@ -1,0 +1,49 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Nemezida.Web.Models.DisplayImage>
+
+
+
+<div class="row" style="text-align:center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<div class="row">
+    <div class="col justify-content-center align-self-center">
+        <a href="#carousel" role="button" data-slide="prev">
+            <i class="fi-xnslx5-chevron-solid arrow"></i>
+            <span class="sr-only">Назад</span>
+        </a>
+    </div>
+    <div class="col-9" style="margin: 0 auto;">
+        <div id="carouse3" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach(var img in Model)
+        {
+                <div class="carousel-item @{ if(img.Active) { <text>active</text>}}">
+                    <img src="@img.Src" class="d-block w-100" alt="@img.AltText">
+                </div>
+        }
+            </div>
+        </div>
+    </div>
+    <div class="col justify-content-center align-self-center">
+        <a href="#carousel" role="button" data-slide="next">
+            <i class="fi-xnsrx5-chevron-solid arrow" aria-hidden="true"></i>
+            <span class="sr-only">Вперед</span>
+        </a>
+    </div>
+</div>
+<div class="row" style="text-align:center; padding-top:.5em;">
+    <div class="col">&nbsp;</div>
+    <div class="col-9"><i class="fi-ctldxl-exclamation-mark" style="color:#4da567"></i> <span>Дата 19.09.20, Время 09:01</span></div>
+    <div class="col">&nbsp;</div>    
+</div>
+<div class="row" style="text-align:center; padding-top:1em;">
+    <div class="col-1">&nbsp;</div>
+    <div class="col"><button type="button" class="btn btn-dark btn-lg">Автоматическая разметка</button></div>
+    <div class="col"><button type="button" class="btn btn-dark btn-lg">Ручная разметка</button></div>
+    <div class="col"><button type="button" class="btn btn-dark btn-lg">Скачать архив</button></div>
+    <div class="col"><button type="button" class="btn btn-dark btn-lg">Скачать фото</button></div>
+    <div class="col-1">&nbsp;</div>
+</div>
+
+
